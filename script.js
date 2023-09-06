@@ -44,14 +44,33 @@ let bot = () => {
         len = 0;
         empty.every(move => {
             t = [...table]
-            t[move] = "X"
-            botTry(move)
+            t[move] = "O"
+            botTryWin(move)
+            if (x === false) return false;
             len++
-            console.log(t)
-            console.log(x)
-            console.log(rand)
-            console.log(len)
-            console.log(empty.length)
+            if(len === empty.length){
+                botDif()
+                return false
+            }
+            return x
+        });
+    }
+}
+let botDif = () => {
+    empty = []
+    table.forEach(box => {
+        if (!isNaN(box)) {
+            empty.push(box)
+        }
+    });
+    if (!win) {
+        len = 0;
+        empty.every(move => {
+            ta = [...table]
+            ta[move] = "X"
+            botTryDif(move)
+            if (x === false) return false;
+            len++
             if(len === empty.length && rand === true){
                 randPlay()
                 return false
@@ -60,6 +79,7 @@ let bot = () => {
         });
     }
 }
+
 
 let stopWin = (move) => {
     document.querySelector("#box" + move).value = "O";
@@ -77,18 +97,28 @@ let randPlay = () => {
     turn();
 }
 
-let botTry = (move) => {
+let botTryWin = (move) => {
     let item = 0
     winCombs.every(com => {
+        item++
+        if (t[com[0]] === t[com[1]] && t[com[1]] === t[com[2]] && t[com[0]] === "O") {
+            console.log("yes")
+            stopWin(move)
+            return x = false
+        } else return x = true
+    });
+}
+let botTryDif = (move) => {
+    let item = 0
+    winCombs.every(coms => {
         rand = true
         item++
-        if (t[com[0]] === t[com[1]] && t[com[1]] === t[com[2]] && t[com[0]] === "X") {
+        if (ta[coms[0]] === ta[coms[1]] && ta[coms[1]] === ta[coms[2]] && ta[coms[0]] === "X") {
             console.log("yes")
             stopWin(move)
             rand = false
             return x = false
         } else return x = true
-
     });
 }
 
