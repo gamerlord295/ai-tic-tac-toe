@@ -126,7 +126,11 @@ let check = () => {
     winCombs.forEach(comb => {
         if (table[comb[0]] === table[comb[1]] && table[comb[1]] === table[comb[2]] && table[comb[0]] === player) {
             console.log("win")
-            return win = true
+            pwin()
         }
     });
+}
+let pwin = () => {
+    document.querySelector("#p").innerHTML =  `Player ${player} won!`
+    return win = true
 }

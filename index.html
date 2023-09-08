@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>tic tac toe</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <input type="button" onclick="play(this, 0)" class="box" id="box0" value="0">
+    <p id="p"></p>
+    <div class="row">
+        <input type="button" onclick="play(this, 0)" style="border-radius: 50% 0 0 0;" class="box" id="box0" value="0">
         <input type="button" onclick="play(this, 1)" class="box" id="box1" value="1">
-        <input type="button" onclick="play(this, 2)" class="box" id="box2" value="2">
+        <input type="button" onclick="play(this, 2)" style="border-radius: 0 50% 0 0;" class="box" id="box2" value="2">
     </div>
-    <div>
+    <div class="row">
         <input type="button" onclick="play(this, 3)" class="box" id="box3" value="3">
         <input type="button" onclick="play(this, 4)" class="box" id="box4" value="4">
         <input type="button" onclick="play(this, 5)" class="box" id="box5" value="5">
     </div>
-    <div>
-        <input type="button" onclick="play(this, 6)" class="box" id="box6" value="6">
+    <div class="row" >
+        <input type="button" onclick="play(this, 6)" style="border-radius: 0 0 0 50%;" class="box" id="box6" value="6">
         <input type="button" onclick="play(this, 7)" class="box" id="box7" value="7">
-        <input type="button" onclick="play(this, 8)" class="box" id="box8" value="8">
+        <input type="button" onclick="play(this, 8)" style="border-radius: 0 0 50%;" class="box" id="box8" value="8">
     </div>
+    <input type="button" onclick="window.location.reload()" class="reset" value="reset">
     <script src="script.js"></script>
 </body>
 </html>

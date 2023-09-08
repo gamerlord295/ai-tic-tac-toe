@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    color: black;
+}
+.row{
+    
+    margin: 1px;
+}
+input{
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color:slateblue;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    
+}
+.reset{
+    width: 200px; 
+    margin-top: 100px;
+    text-align: center;
+    border-radius: 50px;
+    transition: 1s;
+}
+.reset:hover{
+    background-color: blueviolet;
+    transform: translateY(-10px);
+    box-shadow: black 0 10px 0 0;
+}
+.reset:active{
+    transform: translateY(0);
+    box-shadow: none;
+}
+p{
+    font-size: xx-large;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
